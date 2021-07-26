@@ -1,0 +1,112 @@
+// Cara rename commit saat keadaan blm push ke repositori, atau melakukan commit lgi
+	1. ketik di git bash : git commit --amend , nanti akan muncul di text editor pesan yg ingin diubah -> ubah pesannya kemudian save, lalu close 
+	== atau 
+	1. ketik di git bash : git commit --amend -m "New commit message."
+
+	--> kemudian ketik : git push --force <remoteName> <branchName> untuk merubah history digithub jika meremote
+
+
+// Cara rename multiple commit saat sudh di push, atau sudah melakukan commit baru
+	1. ketik di git bash : git rebase -i HEAD~<brapa commit yang ingin di rename>, contoh : git rebase -i HEAD~2 (mengambil 2 commit teratas yang akan diubah)
+		-> nanti akan muncul di texteditor configurasi pesan" yg ingin dirubah :
+			pick 37482c5 menambahkan file index.htm // ubah 'pick' menjadi reword 
+
+			# Rebase 61de790..37482c5 onto 61de790 (1 command)
+			#
+			# Commands:
+			# p, pick <commit> = use commit
+			# r, reword <commit> = use commit, but edit the commit message
+			# e, edit <commit> = use commit, but stop for amending
+			# s, squash <commit> = use commit, but meld into previous commit
+			# f, fixup <commit> = like "squash", but discard this commit's log message
+			# x, exec <command> = run command (the rest of the line) using shell
+			# b, break = stop here (continue rebase later with 'git rebase --continue')
+			# d, drop <commit> = remove commit
+			# l, label <label> = label current HEAD with a name
+			# t, reset <label> = reset HEAD to a label
+			# m, merge [-C <commit> | -c <commit>] <label> [# <oneline>]
+			# .       create a merge commit using the original merge commit's
+			# .       message (or the oneline, if no original merge commit was
+			# .       specified). Use -c <commit> to reword the commit message.
+			#
+			# These lines can be re-ordered; they are executed from top to bottom.
+			#
+			# If you remove a line here THAT COMMIT WILL BE LOST.
+			#
+			# However, if you remove everything, the rebase will be aborted.
+			#
+		-> kemudian nanti akan muncul d text editor pesan" yg ingin direname
+
+		--> kemudian ketik : git push --force <remoteName> <branchName> untuk merubah history digithub jika meremote
+
+
+
+
+# Git Reset, untuk menghapus commit yg berada di depan commit yg d tuju
+	- Perintah git reset sering disebut sebagai perintah berbahaya yang dapat menghancurkan catatan sejarah perubahan.
+
+	- Hati-hati! Perintah ini membuat kita tidak bisa kembali lagi ke masa depan. Mau tidak mau, kita harus menulis ulang sejarah.
+
+
+	- Perintah ini memiliki tiga argumen atau opsi utama, yaitu --soft, --mixed, dan --hard.
+
+	--soft akan mengebalikan dengan kondisi file dalam keadaan staged
+	--mixed akan mengebalikan dengan kondisi file dalam keadaan modified
+	--hard akan mengebalikan dengan kondisi file dalam keadaan commited
+
+	contoh : git reset --soft 06f735af7724558164c87f6b1ce3ca7778eb1c1b
+		-> akan kembali ke keadaan commit tersebut dan menghapus commit yg sudah ad didepanny
+
+
+# Git Revert
+	- Revert artinya mengembalikan. Perintah ini lebih aman daripada git reset, karena tidak akan menghapus catatan sejarah revisi.
+
+	- Revert akan akan mengambil kondisi file yang ada di masa lalu, kemudian menggabungkannya dengan commit terakhir.
+
+	contoh : git revert --soft 06f735af7724558164c87f6b1ce3ca7778eb1c1b
+		-> nanti akan membuat commit baru dari penggabungan commit trakhir dan commit di masa lalu(yg dituju)
+
+
+# membandingkan file pada commit tertentu 
+	- git diff <7 digit code log> 
+
+
+# remote repo di github
+	// add remote
+		- git remote add <namaRemote : origin> <link : https://github.com/Febrianto752/test_github.git>
+	// rename remote
+		- git remote rename <namaLama : origin> <namaBaru : origin Baru>
+	// menghapus remote
+		- git remote remove <namaRemote : origin>
+
+	// mengirim file di local ke github 
+		- git push <namaRemote : origin> <namaCabangTujuanDiGithub : master>
+
+
+## mengembalikan ke saat sebelum stage area (dari git add ke sebelum git add)
+	- git reset namaFile(contoh : index.html)
+
+## mengembalikan ke saat seblum revisi (dari perubahan isi file ke sblm merubah isi file(keadaan awal))
+	- git checkout namaFile(contoh : index.html)
+
+
+
+
+
+
+!! NOTE !!
+! Menangani  ! [remote rejected] master -> master (permission denied)
+	1. git config --global --edit
+	2. Add these lines of configuration at the end of file: 
+		[credential]
+		  helper = osxkeychain
+		  useHttpPath = true
+
+
+
+! cara mengembalikan branch yang sudah terhapus : 
+	- git checkout -b <branch> <sha>
+
+
+
+

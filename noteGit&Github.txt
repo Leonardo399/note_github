@@ -1,0 +1,406 @@
+#VIDEO 1 (PENDAHULUAN) red
+// GIT, subversion, mercurial,cvs,dll merupakan Version Control System yaitu sistem yang mengelola perubahan dalam suatu dokumen
+
+// contoh aplikasi mirip vcs tetapi tdk flexible untuk source code :
+  - google drive 
+  - dropbox 
+// Version Control System cocok untuk mengelola suatu source code kita
+
+// DEFINISI & KEGUNAAN VERSION CONTROL SYSTEM 
+  - Sebuah sistem yang menyimpan rekaman/snapshot perubahan pada source code 
+  - Memungkinkan Bekerja berkolaborasi dengan lebih baik 
+  - Memungkinkan siapa yang melakukan dan kapan sebuah perubahan terjadi
+  - Memungkinkan kita untuk kembali ke keadaan sebelum perubahan (checkout)
+
+// di git folder akan diistilahkan sebagai Repo(Repositori)
+// Histori dari suatu perubahan atau snapshot disebut commit
+  // didalam commit ada keterangan mengenai siapa,kpn,kode commit
+  // commit bisa bercabang disebut dengan branch 
+  // penggabungan 2 branch atau lebih disebut dengan merge 
+
+// Github adalah sebuah website(layanan cloud) khusus untuk menyimpan file" source code, d github sudh ada git 
+  // github bisa diakses jika online
+
+// proses mengambil file dari github dengan git disebut dengan pull
+// proses mengirim file ke github dengan gut disebut dengan push 
+// bisa membuat commit di guthub 
+  // 1. harus membuat github(menyimpan repo sndiri d github) bisa di remote
+  // 2. clone repo yg ada d github ke laptop sndiri 
+
+// aplikasi lain selain github : Bitbucket, GitLab
+
+! harus install softwarenya contoh: git
+
+
+#VIDEO 2 (BEKERJA DENGAN GITHUB) red
+! Nama Repositori digituhub tidak boleh ada spasi
+
+// membuat repositori 
+  1. Buat Repositori (create repo atau icon +)
+  2. buat file di repo (add file|upload file) beserta isinya
+  3. lakukan edit jika mau 
+
+
+// melihat histori 
+  // klik file yg pernah d edit -> klik histori 
+  // atau klik menu insights -> klik menu network -> klik commitnya
+
+
+#VIDEO 3 (BRANCH 2 (di guthub)) red
+// buat branch 
+  - klik menu branch ketik nama branch baru nanti akan ad arahan untuk create 
+  atau 
+  - edit langsung file -> lalu pilih create branch diakhir
+
+
+// merge branch
+  1. klik tombol compare & pull request
+  2. ketik judulnya
+  // pull request 
+    saya punya branch dan minta izin ke master supaya master mengizinkan branch saya untuk melakukan perubahan di file"nya master
+  3. klik create pull request
+  4. nanti akan ad pesan menu di pull request -> kemudian klik menuny(pull request)
+  5. Klik confirm merge (artinya) mengizinkan branch untuk melakukan perubahan di file" master 
+
+  // menghapus branch
+  1. masuk menu branches 
+  2. hapus branch yg ingin di hapus
+
+
+! penggabungan branch (merge) bisa bntrok jika file yg d ubah sama dan isinya berbeda (oleh 2 branch), ini diatasi secara manual di githubnya
+
+
+#VIDEO 4 (GITHUB - FORK) red
+// DEFINISI FORKING
+  - FORK/FORKING merupakan membuat 'copy/duplikat' dari repo orang lain (beserta historinya(commitnya)) ke github punya kita
+  - Jembatan antara repo original dan duplikatnya
+  - modifikasi terhadap repo original 
+  - Berkontribusi ke repo orang lain
+  - Fork != Clone
+  
+
+ 
+#VIDEO 5 (BEKERJA DENGAN GIT) red
+// Install terlebih dahulu gitnya
+
+// Git Command : 
+    - $ git init // untuk membuat git master(main) 
+    - $ git add <file(s)> // untuk otw to commit
+      // contoh : git add index.html (untuk satu file)
+                  git add . (smua file yg berubah)
+      // setelah git add maka file akan ada d staging area (blm msk histori)
+    - $ git commit // $ git commit -m "Ini Message"
+      // sebelum d commit lakukan :
+        ! disarankan sesuaikan username dan email dengan akun github
+        // ini digunakan untuk tanda pengenal
+        - $ git config --global user.name "Febrianto752"
+        - $ git config --global user.email "febrianto.bekasi@gmail.com" 
+    - $ git config
+    - $ git branch 
+    - $ git help
+
+    - $ git status
+    - $ git log // untuk melihat history commit 
+      // contoh : $ git log -3 (melihatkan 3 perubahan teratas)
+                  $ git log -- style.css (melihatkan commit yang bersangkutan dengan file style.css)
+        ! -- <file>
+    - $ git checkout // untuk mengembalikan ke history terdahulu 
+      // contoh : $ git checkout <kodeHash Commit(7 digit pertama saja)>(ini bisa di lihat di git log) // ini akan mengembalikan perubahan untuk smua file
+      $ git checkout -- <file> // ini hanya mengembalikan perubahan d file tertentu saja
+        ! setelah d checkout maka status akan berada d staging area
+
+// 3 Area pada repo git : 
+  - Working tree -> go to staging area ketik printah : 'git add .' ! tdk pke ''
+  - Staging Area -> go to history ketik printah : 'git commit -m "message"'
+  - History 
+
+! folder .git itu invisible (bisa d atur ke visible)
+! alur : git init -> cek git status -> git add -> git commit -m "Message"
+
+
+#VIDEO 6 (GIT BRANCH DAN MERGE) (masih di local computer) red
+// untuk menunjukan list branch yg ada
+  - $ git branch
+
+// untuk membuat branch 
+  - $ git branch namaBranch 
+
+// untuk menampilkan graph commit 
+  - $ git log --all --decorate --oneline --graph 
+
+// untuk membuat alias 
+  - $ alias graph="git log --all --decorate --oneline --graph" // tidak pke spasi (graph="")
+    // jadi tinggal panggil aj aliasny : $graph
+
+// untuk pindah ke branch 
+  - $ git checkout namaBranch 
+
+// Untuk Merge branch 
+  rule : pindah ke master -> $ git merge namaBranch
+
+// untuk menghapus branch yg sudah d merge
+  - $ git branch -d namaBranch
+    ! cek terlebih dahulu jika ingin dihapus :
+  // untuk mengecek merge yg terjadi 
+  - $ git branch --merged
+
+// untuk mengahapus branch tanpa harus d merge dahulu 
+  - $ git branch -D namaBranch
+
+// jenis merged 
+  1. Fast Forward
+  2. tree ways // merged sambil membuat branch baru
+      -> kondisi dmna ad master yg sudh d merged sm branch1(master, branch1)
+      -> yg kemudian ingin d merge lgi sm branch2(master,branch2)
+      -> maka akan d buat commit baru(master, branch1, branch2)
+
+
+! jika status "modified" bisa langsung d commit tanpa harus d add 
+  // $ git commit -am "Message"
+
+!! jika melakukan merge maka akan langsung berubah (tdk perlu izin seperti jika pke github)
+
+
+
+#VIDEO 7 (MERGED CONFLICT) red
+// merged conflict terjadi jika ada dua perubahan ditempat yang sama
+  -> keadaan jika file di master d ubah dan file d branch d ubah yg sama dengan file yg d ubah d master, kemudian d merge d master 
+    -> saat merge nanti akan di benarkan secara manual
+
+
+
+// untuk kembali ke commit sebelumnya walaupun sudah d merge 
+  - $ git checkout kodehas(7 digit pertama)
+
+// untuk kembali ke master setelah checkout keadaan sebelumnya
+- $ git checkout master
+
+
+
+#VIDEO 8 (GIT REMOTE) red
+! nama folder d github dan di local computer harus sama
+// Membutuhkan adanya git dan github, gitlab, dsb
+
+=== dari github ke desktop(cloning)(ceklist readme.txt) ===
+// cara menghubungkan(cloning) github dengan git di desktop 
+  -> pakai html dan ssh , jika donwload maka hanya folderny saja tetapi tidak terhubung(remote)
+  1. masuk/buat repositori di github 
+  2. klik menu download dan copy link html atau ssh 
+    ! jika ssh maka harus konfigurasi terlebih dahulu key nya di komputer
+  3. masuk ke folder di desktop yg dijadikan tempat clone 
+  4. klik kanan dan klik gitbash (masuk ke repositori di desktop melalui gitbash) 
+  5. ketik "git clone http...(link html/ssh yg sudah di copy tadi)"
+
+// Untuk menclone repo di github,dsb 
+  - $ git clone <link>
+
+// untuk melihat nama remote 
+  ! remote harus punya nama, default = origin
+  - $ git remote 
+  // untuk melihat koneksi remote 
+  - $ git remote -v(verbous) 
+
+! jika git status maka infony lebih lengkap 
+
+! jika commit di desktop maka yg d desktop akan lebih maju dari pada di github atau sebaliknya
+  ! maka lakukan push jika ingin sama
+    - git push
+
+// untuk mengirimkan perubahan dari desktop ke repo github atau dsb 
+  - $ git push 
+    ! akan diarahkan ke login akun github (untuk menghubungkan) jika belum dihubungkan sebelumnya 
+
+// untuk melihat isi config seperti user, email
+  - $ git config --list 
+
+
+
+=== CARA KE 2 UNTUK MENGHUBUNGKAN GITHUB dan local computer(jika tdk ceklis readme.txt) ===
+// or push an existing repository from the command line
+  // ketik di git bash : Link sesuaikan dengan repositorynya
+    - git remote add origin https://github.com/Febrianto752/coba_remote.git
+  // untuk mengubah nama branch
+    - git branch -M main|master
+  // untuk mengirimkan file ke github (awal-awal)
+    - git push -u origin main|master
+
+
+=== dari git bash ke github(di desktop ada di github tidak ada) ===
+1. buat repo di komputer dan inisialisasi gitnya 
+2. buat repo di github dengan nama yang sama tapi biarkan kosong(jgn ceklist readme.txt) // nanti muncul info untuk memasukan file dari git bash ke github
+3. ketik di git bash "git remote add <namaRemote> <link>" // untuk menambahkan remote | menghubungkan ke github (remote) 
+  ! namaRemote default = origin
+
+// untuk mengirimkan file ke github (awal-awal)
+  - git push -u origin master // origin = nama Remote, master = nama branch 
+
+!! - git pull untuk menarik smua file di github ke local computer,
+   - git push untuk mengirim smua file di local computer ke github
+
+// untuk mengetahui repo di github ad perubahan baru atau tidak, jika ada maka commit remote akan membuat cabang
+  - git fetch <nama remote> 
+
+
+! jika ada perubahan baru langsung di repo github maka harus d 'pull' dulu baru bisa 'push'
+  - git pull // untuk merge antara commit remote dengan local
+  -> git push namaRemote Main|Master
+
+
+
+
+
+#VIDEO 9 (GITHUB PAGES) red
+// Link detail about web pages : https://pages.github.com/
+! hanya bisa untuk aplikasi web yg menggunakan html,css (bkn pke bahasa pemrog)
+// Cara membuat website di github :
+  // 1. buat repository diguthub dengan format : usernameGithub.github.io 
+  // 2. jgn menceklis add redme atau yg lain 
+  // 3. masukan file" ke repositoriny 
+    // syarat di repository harus ada index.html untuk inisialisasi awal menjalankan web
+    ! Masukan file" bisa menggunakan remote melalui gitbash atau copas langsung ke repositori yang ada d web github 
+  -> akses website : https://febrianto752.github.io/
+
+// cara membuat repositori website di dalam url pertama : namaGithub.github.io/namaRepoBaru
+  // 1. buat repositori di github
+  // 2. jgn menceklis add readme atau yang lain 
+  // 3. masukan file" ke repositori (pke remote)
+    ! harus ada index.html 
+  // 4. masuk ke setting cari sesi github pages ubah source menjadi nama branch 
+  // 5. klik save di sesi github pages 
+  // 6. akses website : namaGithub.github.io/namaRepo
+
+
+
+
+#VIDEO 10 (MULTIPLE REMOTES)
+
+// cerita : wpu ngefork repo di sa dan repo yg d fork d clone di local computer, dan ingin secara ketiganya sinkron(wpu, sa, local comp)
+https://github.com/Febrianto752/coba_remote.git
+// 1. cloning repo fork yg d wpu (!bkn sa), otomatis remote bernama origin
+// 2. tambahkan remote baru ke repo sa
+  - git remote add namaRemote@ <link> (link = repo sa) , contoh namaRemote = SA
+// # ubah atau tambahkan sesuatu di repo github sa 
+// 3. fetch history repo yg d sa ke local comp untuk mengetahui perubahan yg trjadi
+  - git fetch SA
+// 4. (jika ad perubahan di repo sa) 
+    -> git fetch SA
+    -> git merge SA/namaBranch , contoh namaBranch = master (local comp = repo sa) // untuk menyamakan repo github sa dengan local
+    -> git push -u origin master (maka sudh sinkron : local comp = repo sa = wpu)
+
+
+
+#VIDEO 11 (BRANCH REMOTE)
+
+// cerita : wpu ngefork repo as dan wpu ingin melakukan kontribus/perubahan di repo as dengan pull request 
+
+// 1. clone repo wpu yg ngefork ke repo as
+    -> jgn lupa fetch repo si sa (menggunakan multiple remote)
+        - git fetch SA master(namaBranch)
+// 2. buat branch di local comp kemudian switch ke branch tersebut, kemudian push ke remote origin(repo wpu yg ngefork ke repo as)
+    - git push origin namaBranch
+
+// 3. masuk ke github(wpu) kemudian klik compare & pull request
+    -> nanti di repo sa akan ada pesan pull request
+
+// 4. jika di setujui maka sinkronkan (wpu = sa = local comp), SA = namaRemote ke repo sa
+    -> git fetch SA
+    -> git merge SA/namaBranch , contoh namaBranch = master (local comp = repo sa)
+    -> git push -u origin master (maka sudh sinkron : local comp = repo sa = wpu)
+
+
+!! usahakan branch master dari ngefork ke akun lain harus sesuai dengan asliny 
+  - jika ingin melakukan perubahan lakukan di branch lain selain master
+
+
+#VIDEO 12 (GIT IGNORE)
+// git ignore berfungsi untuk menuliskan file" jenis apa saja yang tidak akan d bawa saat push ke github
+! saat buat repo di github ad pilihan(di bawah readme) .gitignore
+
+// buat file .gitignore
+  // yg isinya file" yang ingin tidak d push ke github
+    // contoh : 
+      note.txt (file note.txt)
+      data/ (folder data)
+      *.exe (smua file yang ad extension .exe)
+
+
+// file" apa saja yang disarankan ad d .gitignore
+  link 1: https://github.com/github/gitignore
+  link 2: https://www.toptal.com/developers/gitignore/api/windows
+    // contoh keyword : windows|mac|linux , visual studio code, codeigniter|laravel
+
+
+
+
+#VIDEO 13 (REABASE)
+// Mirip dengan merge tetapi hanya memakai teknik 'fast forward' dalam menggabungkan branch
+
+// ilustrasi
+  
+  kondisi                   merge                   rebase 
+  (master)                (master)                  (master)
+    .                       .                          .
+    .  (branch)             . (branch)                 . (branch)(awal)
+    .  .                    .   .                      .
+    .  .                    .   .                      .
+                            .(merged)                     .(bergeser ke sini awal branchnya)
+                                                          .(rebase)
+
+
+
+// Cara menambah contributor di repo github (membuat orang lain bekerja sama membuat project)
+  1. masuk ke menu setting di repo
+  2. klik menu manage account
+  3. klik invite contributor kemudian tuliskan nama akun contributor
+    -> nanti di akun contributor akan ada pesan invitation
+  4. jika akun contributor accept invitation maka contributor dapat mengakses reponya
+
+
+// cara rebase
+  - git rebase master // membuat commit cabang menjadi paling depan (fast-forward dengan master)
+    -> git checkout master // masuk ke branch master
+    -> git rebase fitur_navbar // tag commit master akan pindah ke tag commit fitur_keren(sejajar)(fast-forward)
+    -> git push -u origin master // mengupdate master remote
+
+
+
+
+#Video 14 (GIT & WEB HOSTING)
+
+
+
+
+
+
+! NOTE !
+
+! git branch digunakan saat ingin menambahkan fitur baru yg experimental atau saat bekerja tim 
+! cara keluar dari git log : klik aj 'q'
+! cara membuat folder di github atau memindahkan file di github
+  - link : https://fauzanashariblog.blogspot.com/2019/07/membuat-folder-di-repository-github-dan.html
+  ! klik create new file -> tuliskan nama_folder/nama_file
+
+! menghapus git remote : git remote rm namaRemote
+
+!! untuk melakukan remote dengan github maka history antar local dan repo github harus sama(related)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

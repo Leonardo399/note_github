@@ -1,0 +1,24 @@
+! Untuk format penulisan README.md yang lebih lengkap, Anda dapat mempelajarinya di https://www.markdownguide.org/basic-syntax/
+
+
+## Cara membuat release di github red
+// berikut langkah-langkahnya : 
+	1. buka reponya di github
+	2. klik menu release yang terletak di kanan view
+	3. isi form yang muncul (tidak wajib smua harus terisi) : 
+		- Bagian tag version berfungsi untuk membuat nama versi. Biasanya nama versi dituliskan dengan huruf v, lalu diikuti dengan nomor versi. Contohnya, seperti v.1.0, v.1.0.0, dan sejenisnya. Jika pembuatan release file digunakan untuk proyek aplikasi, sebaiknya penamaan dari tag version menggunakan semantic versioning.
+		- Bagian release title atau judul dari versi rilis berfungsi sebagai judul rilis yang menjelaskan secara singkat versi rilis yang akan dibuat.
+		- Bagian description atau deskripsi versi rilis berfungsi untuk menuliskan deskripsi detail dari versi rilis yang akan dibuat.
+		- Bagian Attach binaries berfungsi untuk tempat mengunggah file binary, contohnya file-file hasil compile program, compressed file source code, atau file dokumentasi. Biasanya attach binaries digunakan para pengguna Git yang membuat release file untuk proyek aplikasi.
+		- Bagian checkbox pre-release berfungsi untuk menandai bahwa pembuatan rilis ini bersifat pra rilis atau masih dalam bentuk beta. Bagian ini biasa digunakan para pengguna Git yang sedang dalam pengembangan proyek aplikasi di repository GitHub.
+
+	4. Setelah yakin dengan semua yang Anda tulis, silakan klik button Publish release
+
+
+
+
+
+
+
+
+
