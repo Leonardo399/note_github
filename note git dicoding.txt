@@ -1,3 +1,5 @@
+=== Dasar Git === silver
+! File README.md berisi mengenai isi dari repository
 ! Untuk format penulisan README.md yang lebih lengkap, Anda dapat mempelajarinya di https://www.markdownguide.org/basic-syntax/
 
 
@@ -16,9 +18,32 @@
 
 
 
+=== Kolaborasi dengan Tim === silver
+! seorang kolaborator belum tentu seorang kontributor karena seorang kolaborator belum tentu pernahmelakukan commit atau merubah repo di github, tetapi seorang kontributor sudah tentu pernah melakukan commit atau merubah. 
+! Seorang kontributor bisa merupakan dari orang luar proyek atau organisasi.
+
+## Latihan Berkolaborasi dengan Tim red
+// cara invit kolaborator
+	1. masuk ke menu setting di repo
+	2. klik menu manage account
+	3. klik invite contributor kemudian tuliskan nama akun contributor
+	   -> nanti di email akun contributor akan ada pesan invitation
+	4. jika akun contributor accept invitation maka contributor dapat mengakses reponya
+
+// saat ingin merge pull request / confirm pull request
+	! Sebelum menekan "Merge pull request", perhatikanlah dropdown di bagian kanan tombol tersebut. Perlu Anda tahu, sebenarnya ada beberapa macam cara untuk menggabungkan perubahan ke branch/repository utama.
+	Ketiga item tersebut sama-sama berfungsi untuk menggabungkan commit ke dalam branch utama. Namun, terdapat perbedaan hasil dari masing-masing opsi tersebut. Berikut untuk detailnya:
+	- Create a merge commit:  Commit yang dilakukan akan dicatat dan dimasukkan ke dalam history commit branch tujuan. Selain itu, ada satu commit baru yang menginformasikan bahwa telah terjadi proses penggabungan.
+	- Squash and merge: Commit yang dilakukan akan digabungkan dan dicatat menjadi satu commit dalam history commit branch tujuan. (lebih rapih)
+	- Rebase and merge: Commit yang dilakukan akan dipindahkan ke dalam history commit commti tujuan. Namun tidak akan membuat commit baru untuk menginformasikan proses pencatatan. (lebih rapih)
 
 
+## Apa itu Fork red
+! Fork adalah proses menyalin proyek repository orang lain ke repository pribadi. Fork bertindak sebagai jembatan antara repositori asli (original repository) dan repositori salinan (fork repository). Anda dapat menawarkan untuk menggabungkan perubahan yang telah Anda lakukan pada repositori salinan ke repositori asal untuk membantu membuat proyek orang lain lebih baik dengan melakukan pull request.
 
-
+! Pada praktiknya, ketika Anda tidak memiliki akses pada sebuah public repository, Anda dapat melakukan beberapa tahap berikut agar dapat berkontribusi pada repository tersebut:
+	- Melakukan fork atau menyalin suatu repository.
+	- Melakukan perbaikan atau menambahkan perubahan.
+	- Melakukan pull request agar perubahan dapat disetujui untuk digabungkan ke dalam repository asli.
 
 

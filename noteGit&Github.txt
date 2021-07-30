@@ -289,7 +289,7 @@ https://github.com/Febrianto752/coba_remote.git
 
 
 
-#VIDEO 11 (BRANCH REMOTE)
+#VIDEO 11 (BRANCH REMOTE) gold
 
 // cerita : wpu ngefork repo as dan wpu ingin melakukan kontribus/perubahan di repo as dengan pull request 
 
@@ -348,11 +348,11 @@ https://github.com/Febrianto752/coba_remote.git
 
 
 
-// Cara menambah contributor di repo github (membuat orang lain bekerja sama membuat project)
+// Cara menambah contributor di repo github (membuat orang lain bekerja sama membuat project) gold
   1. masuk ke menu setting di repo
   2. klik menu manage account
   3. klik invite contributor kemudian tuliskan nama akun contributor
-    -> nanti di akun contributor akan ada pesan invitation
+    -> nanti di email akun contributor akan ada pesan invitation
   4. jika akun contributor accept invitation maka contributor dapat mengakses reponya
 
 
