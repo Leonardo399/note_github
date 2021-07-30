@@ -48,11 +48,10 @@
 	- Hati-hati! Perintah ini membuat kita tidak bisa kembali lagi ke masa depan. Mau tidak mau, kita harus menulis ulang sejarah.
 
 
-	- Perintah ini memiliki tiga argumen atau opsi utama, yaitu --soft, --mixed, dan --hard.
-
-	--soft akan mengebalikan dengan kondisi file dalam keadaan staged
-	--mixed akan mengebalikan dengan kondisi file dalam keadaan modified
-	--hard akan mengebalikan dengan kondisi file dalam keadaan commited
+	- Perintah git reset ini memiliki tiga argumen atau opsi utama, yaitu --soft, --mixed, dan --hard : 
+		--soft akan mengebalikan dengan kondisi file dalam keadaan staged
+		--mixed akan mengebalikan dengan kondisi file dalam keadaan modified
+		--hard akan mengebalikan dengan kondisi file dalam keadaan commited (perubahan hilang smua)
 
 	contoh : git reset --soft 06f735af7724558164c87f6b1ce3ca7778eb1c1b
 		-> akan kembali ke keadaan commit tersebut dan menghapus commit yg sudah ad didepanny
@@ -63,12 +62,29 @@
 
 	- Revert akan akan mengambil kondisi file yang ada di masa lalu, kemudian menggabungkannya dengan commit terakhir.
 
-	contoh : git revert --soft 06f735af7724558164c87f6b1ce3ca7778eb1c1b
-		-> nanti akan membuat commit baru dari penggabungan commit trakhir dan commit di masa lalu(yg dituju)
+	sintaks : git revert <option> <sha> 
+	contoh : 
+	- git revert --no-commit 06f735af7724558164c87f6b1ce3ca7778eb1c1b
+		keterangan : 
+			-n, --no-commit       don't automatically commit
+	    	-e, --edit            edit the commit message
+	== atau bisa tanpa <opsion> : 
+	- git revert 06f735af7724558164c87f6b1ce3ca7778eb1c1b
+
+		-> akan muncul text editor, 
+		-> pilih perintah git berikut(opsional) : 
+			- git revert <subcommand>, contoh : git revert --continue
+			keterangan subcommand : 
+				--quit                end revert or cherry-pick sequence
+			    --continue            resume revert or cherry-pick sequence
+			    --abort               cancel revert or cherry-pick sequence
+			    --skip                skip current commit and continue
+			    --cleanup <mode>      how to strip spaces and #comments from message
+		-> jika --continue maka nanti akan membuat commit baru dari penggabungan commit trakhir dan commit di masa lalu(yg dituju)
 
 
 # membandingkan file pada commit tertentu 
-	- git diff <7 digit code log> 
+	- git diff <7 digit code log> <7 digit code log>
 
 
 # remote repo di github

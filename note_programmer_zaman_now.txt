@@ -1,0 +1,90 @@
+## Membatalkan penambahan file (menit 1:17:42) red
+// file-file yang baru dibuat dengan melakukan perintah git berikut maka file-file tersebut akan terhapus 
+	- git clean -f
+
+
+
+## Membatalkan perubahan file (1:20:00) red
+// file-file yang sudah dimodifikasi (jika di git status dalam mode: modified) maka akan kembali ke keadaan sebelum dimodifikasi
+	- Git restore namaFile(contoh : index.html)
+
+
+## Membatalkan penghapusan file (1:22:00) red
+// Perintah git : 
+	- Git restore namaFile(contoh : index.html)
+
+
+## Membatalkan dari staging area (dari staging area ke working directory) (1:23:32) red
+// Perintah git : 
+	- Git restore --staged namaFile(contoh : index.html) // maka file akan berada di working area(dalam keadaan modified|delete|add|renamed)
+		// lakukan git restore jika ingin ke keadaan sebelum modified
+			-> git restore namaFile(contoh : index.html) 
+
+
+## Membatalkan yang sudah dicommit red
+! tidak bisa, tetapi ada perintah git revert dan git reset untuk menghapus atau kembali ke commit sebelumnya
+
+
+
+## Membandingan 2 commit red
+// sintaks : git diff <shacommit1> <shacommit2>
+
+// contoh : 
+	- git diff 6d9bf58 HEAD
+	- git diff 6d9bf58 2dfbf58
+
+
+
+## Git Reset red
+! sebelum melakukan git reset disarankan untuk mengingat atau menyalin sha dari smua commit
+	! yang nanti bisa digunakan jika tidak yakin untuk mereset tetapi sudah terlanjur melakukan git reset (! ini bisa dilakukan jika belum melakukan commit baru)
+! Perintah git reset ini memiliki tiga argumen atau opsi utama, yaitu --soft, --mixed, dan --hard : 
+	--soft akan mengebalikan dengan kondisi file dalam keadaan staged
+	--mixed akan mengebalikan dengan kondisi file dalam keadaan modified
+	--hard akan mengebalikan dengan kondisi file dalam keadaan commited (perubahan hilang smua)
+
+// Contoh : 
+	// riwayat commit
+	b432sdd merubah file style.css
+	123asds menambah file index.html
+	426asgs menambah file index.html
+
+	// perintah git
+		- git reset --soft 426asgs
+		 -> !jika tidak jadi bisa kembali keawal dengan sha commit yg dituju (! ini bisa dilakukan jika belum melakukan commit baru)
+		 	- git reset --soft b432sdd
+
+
+## Git amend red
+! digunakan untuk merubah/rename commit sebelumnya
+// contoh kasus : jika sudah melakukan commit dan berpikir bahwa lebih baik aktivitas yang telah dikerjakan sekarang ini digabungkan menjadi 1 commit dengan sebelumnya
+	-> maka tinggal jalankan perintah git : 
+		- git add . (! jika belum masuk staging area)
+		-> git commit --amend -m "New commit message."
+			-> nanti 1 commit sebelumnya akan berubah (sha berubah,dan isi commit berubah)
+
+
+## Git blame red
+! digunakan jika ingin tahu siapa saja yg merubah/membuat(kontributor) suatu file 
+// perintah git : 
+	- git blame namaFile(contoh: index.html)
+		-> nanti akan muncul daftar <sha>(nama_kontributor tanggal_perubahan)
+		-> kemudian lakukan perintah git berikut untuk mengetahui detailnya
+			- git show <sha>
+
+
+
+## Membuat Alias di git red
+// membuat alias di config global supaya tidak terus menerus menulisnya 
+	// perintah git : 
+		- git config --global alias.namaAlias "perintah"
+
+	// contoh : 
+		- git config --global alias.ko commit
+		- git config --global alias.graph "log --all --oneline --decorate --graph"
+
+	// cara untuk memanggil alias
+		- git namaAlias
+
+	// contoh : 
+		- git graph

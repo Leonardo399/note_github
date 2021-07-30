@@ -30,7 +30,7 @@
 	   -> nanti di email akun contributor akan ada pesan invitation
 	4. jika akun contributor accept invitation maka contributor dapat mengakses reponya
 
-// saat ingin merge pull request / confirm pull request
+// saat ingin merge pull request / confirm pull request gold
 	! Sebelum menekan "Merge pull request", perhatikanlah dropdown di bagian kanan tombol tersebut. Perlu Anda tahu, sebenarnya ada beberapa macam cara untuk menggabungkan perubahan ke branch/repository utama.
 	Ketiga item tersebut sama-sama berfungsi untuk menggabungkan commit ke dalam branch utama. Namun, terdapat perbedaan hasil dari masing-masing opsi tersebut. Berikut untuk detailnya:
 	- Create a merge commit:  Commit yang dilakukan akan dicatat dan dimasukkan ke dalam history commit branch tujuan. Selain itu, ada satu commit baru yang menginformasikan bahwa telah terjadi proses penggabungan.
