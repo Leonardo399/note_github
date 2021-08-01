@@ -34,7 +34,7 @@
 	! Sebelum menekan "Merge pull request", perhatikanlah dropdown di bagian kanan tombol tersebut. Perlu Anda tahu, sebenarnya ada beberapa macam cara untuk menggabungkan perubahan ke branch/repository utama.
 	Ketiga item tersebut sama-sama berfungsi untuk menggabungkan commit ke dalam branch utama. Namun, terdapat perbedaan hasil dari masing-masing opsi tersebut. Berikut untuk detailnya:
 	- Create a merge commit:  Commit yang dilakukan akan dicatat dan dimasukkan ke dalam history commit branch tujuan. Selain itu, ada satu commit baru yang menginformasikan bahwa telah terjadi proses penggabungan.
-	- Squash and merge: Commit yang dilakukan akan digabungkan dan dicatat menjadi satu commit dalam history commit branch tujuan. (lebih rapih)
+	- Squash and merge: Commit yang dilakukan akan digabungkan dan dicatat menjadi satu commit dalam history commit branch tujuan. (lebih rapih(beberapa commit d branch menjadi satu commit saja saat di merge di branch tujuan))
 	- Rebase and merge: Commit yang dilakukan akan dipindahkan ke dalam history commit commti tujuan. Namun tidak akan membuat commit baru untuk menginformasikan proses pencatatan. (lebih rapih)
 
 
@@ -45,5 +45,20 @@
 	- Melakukan fork atau menyalin suatu repository.
 	- Melakukan perbaikan atau menambahkan perubahan.
 	- Melakukan pull request agar perubahan dapat disetujui untuk digabungkan ke dalam repository asli.
+
+
+
+
+
+
+
+
+
+
+
+!! NOTE !!
+! Insights Graph repository hanya tersedia di repository publik dengan GitHub Free dan GitHub Free untuk organisasi. Sedangkan untuk repository private dapat digunakan melalui GitHub Pro, GitHub Team, GitHub Enterprise Cloud, dan GitHub Enterprise Server. Untuk informasi lebih lanjut, lihat " Tentang grafik repositori " dan " Produk GitHub ."
+
+
 
 
