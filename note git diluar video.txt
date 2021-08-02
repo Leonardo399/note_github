@@ -40,8 +40,6 @@
 		--> kemudian ketik : git push --force <remoteName> <branchName> untuk merubah history digithub jika meremote
 
 
-
-
 # Git Reset, untuk menghapus commit yg berada di depan commit yg d tuju
 	- Perintah git reset sering disebut sebagai perintah berbahaya yang dapat menghancurkan catatan sejarah perubahan.
 

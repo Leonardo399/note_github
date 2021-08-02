@@ -33,8 +33,6 @@
 	- git diff 6d9bf58 HEAD
 	- git diff 6d9bf58 2dfbf58
 
-
-
 ## Git Reset red
 ! sebelum melakukan git reset disarankan untuk mengingat atau menyalin sha dari smua commit
 	! yang nanti bisa digunakan jika tidak yakin untuk mereset tetapi sudah terlanjur melakukan git reset (! ini bisa dilakukan jika belum melakukan commit baru)

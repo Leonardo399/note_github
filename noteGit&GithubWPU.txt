@@ -9,7 +9,7 @@
 // DEFINISI & KEGUNAAN VERSION CONTROL SYSTEM 
   - Sebuah sistem yang menyimpan rekaman/snapshot perubahan pada source code 
   - Memungkinkan Bekerja berkolaborasi dengan lebih baik 
-  - Memungkinkan siapa yang melakukan dan kapan sebuah perubahan terjadi
+  - Memungkinkan mengetahui siapa yang melakukan dan kapan sebuah perubahan terjadi
   - Memungkinkan kita untuk kembali ke keadaan sebelum perubahan (checkout)
 
 // di git folder akan diistilahkan sebagai Repo(Repositori)
@@ -33,7 +33,7 @@
 
 
 #VIDEO 2 (BEKERJA DENGAN GITHUB) red
-! Nama Repositori digituhub tidak boleh ada spasi
+! Nama Repositori di github tidak boleh ada spasi
 
 // membuat repositori 
   1. Buat Repositori (create repo atau icon +)

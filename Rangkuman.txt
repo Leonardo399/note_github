@@ -1,0 +1,83 @@
+## PENDAHULUAN red
+! GIT, subversion, mercurial,pvcs,dll merupakan Version Control System yaitu sistem yang mengelola perubahan dalam suatu dokumen
+
+! Contoh aplikasi mirip vcs tetapi tdk flexible untuk source code :
+  - google drive 
+  - dropbox 
+
+! Version Control System cocok untuk mengelola suatu source code kita
+
+! DEFINISI & KEGUNAAN VERSION CONTROL SYSTEM 
+  - Sebuah sistem yang menyimpan rekaman/snapshot perubahan pada source code 
+  - Memungkinkan Bekerja berkolaborasi dengan lebih baik 
+  - Memungkinkan mengetahui siapa yang melakukan dan kapan sebuah perubahan terjadi
+  - Memungkinkan kita untuk kembali ke keadaan sebelum perubahan (checkout)
+
+! Di git folder akan diistilahkan sebagai Repo(Repositori)
+! Histori dari suatu perubahan atau snapshot disebut commit
+  ! didalam commit ada keterangan mengenai siapa,kpn,kode commit
+  ! commit bisa bercabang disebut dengan branch 
+  ! penggabungan 2 branch atau lebih disebut dengan merge 
+
+! Github adalah sebuah website(layanan cloud) khusus untuk menyimpan file" source code, d github sudh ada git 
+  ! github bisa diakses jika online
+  ! github terdapat versi mobile, desktop, dan website
+
+! Nama proses mengambil file dari github dengan git disebut dengan pull
+! Nama proses mengirim file ke github dengan gut disebut dengan push 
+
+! Aplikasi lain selain github : Bitbucket, GitLab
+
+
+
+
+## Bekerja dengan Github red
+! Nama Repositori di github tidak boleh ada spasi
+
+// Membuat repositori di github
+  1. Buat Repositori (create repo atau icon +)
+  2. buat file di repo (add file|upload file) beserta isinya
+  3. lakukan edit jika mau 
+
+// Melihat history commit di repo
+	1. buka repositorinya
+	2. klik icon commit
+
+// Melihat histori commit di file yang pernah dilakukan perubahan
+  // klik file yg pernah d edit -> klik histori 
+  // atau klik menu insights -> klik menu network -> klik commitnya
+
+// Cara nembuat branch di github 
+  - klik menu branch ketik nama branch baru -> nanti akan ada arahan untuk create branch baru
+  == atau 
+  - edit langsung salah satu file -> lalu pilih create branch di akhir setelah description commit
+
+// Cara merge branch
+  1. setelah selesai membuat commit di branch, klik tombol compare & pull request
+  2. isi judulnya dan deskripsi
+  	! pull request 
+	    Misal saya punya branch dan minta izin ke master supaya master mengizinkan branch saya untuk melakukan perubahan di file"nya master
+  3. klik create pull request
+  4. nanti akan ad pesan menu di pull request -> kemudian klik menuny(pull request)
+  5. Klik confirm merge (artinya) mengizinkan branch untuk melakukan perubahan di file" master
+
+// Cara menghapus branch
+  1. Klik icon branches 
+  2. hapus branch yg ingin di hapus dengan klik icon trash
+
+! Penggabungan branch (merge) bisa bntrok jika file yg d ubah sama dan isinya berbeda (oleh 2 branch), ini bisa diatasi secara manual di githubnya
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
