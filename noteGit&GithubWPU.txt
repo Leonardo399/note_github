@@ -110,7 +110,7 @@
         ! setelah d checkout maka status akan berada d staging area
 
 // 3 Area pada repo git : 
-  - Working tree -> go to staging area ketik printah : 'git add .' ! tdk pke ''
+  - Working tree -> go to staging area ketik printah : 'git add .' 
   - Staging Area -> go to history ketik printah : 'git commit -m "message"'
   - History 
 
@@ -253,7 +253,7 @@
 // Link detail about web pages : https://pages.github.com/
 ! hanya bisa untuk aplikasi web yg menggunakan html,css (bkn pke bahasa pemrog)
 // Cara membuat website di github :
-  // 1. buat repository diguthub dengan format : usernameGithub.github.io 
+  // 1. buat repository di github dengan format : usernameGithub.github.io 
   // 2. jgn menceklis add redme atau yg lain 
   // 3. masukan file" ke repositoriny 
     // syarat di repository harus ada index.html untuk inisialisasi awal menjalankan web

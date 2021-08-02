@@ -33,6 +33,11 @@
 
 ## Bekerja dengan Github red
 ! Nama Repositori di github tidak boleh ada spasi
+! File README.md berisi mengenai isi dari repository
+! Untuk format penulisan README.md yang lebih lengkap, Anda dapat mempelajarinya di https://www.markdownguide.org/basic-syntax/
+! Code reviews bertujuan untuk  mengomentari perubahan, menyetujui perubahan, atau meminta perubahan lebih lanjut sebelum pull request digabungkan.
+! Ulasan kode perlu dilakukan agar tidak menimbulkan permasalahan ke depannya. Dampaknya, anggota tim lain harus menunggu proses code review tersebut agar tidak terjadi masalah lain sewaktu menggabungkan perubahan ke base branch (cabang utama).
+! Github bisa dijadikan sebagai media pembuatan portfolio
 
 // Membuat repositori di github
   1. Buat Repositori (create repo atau icon +)
@@ -44,30 +49,108 @@
 	2. klik icon commit
 
 // Melihat histori commit di file yang pernah dilakukan perubahan
-  // klik file yg pernah d edit -> klik histori 
-  // atau klik menu insights -> klik menu network -> klik commitnya
+  - Klik file yg pernah d edit -> klik histori 
+  == Atau 
+  - klik menu insights -> klik menu network -> klik commitnya
 
 // Cara nembuat branch di github 
-  - klik menu branch ketik nama branch baru -> nanti akan ada arahan untuk create branch baru
+  - Klik menu branch ketik nama branch baru -> nanti akan ada arahan untuk create branch baru
   == atau 
-  - edit langsung salah satu file -> lalu pilih create branch di akhir setelah description commit
+  - Edit langsung salah satu file -> lalu pilih create branch di akhir setelah description commit
 
 // Cara merge branch
-  1. setelah selesai membuat commit di branch, klik tombol compare & pull request
-  2. isi judulnya dan deskripsi
+  1. Setelah selesai membuat commit di branch, klik tombol compare & pull request
+  2. Isi judulnya dan deskripsi
   	! pull request 
 	    Misal saya punya branch dan minta izin ke master supaya master mengizinkan branch saya untuk melakukan perubahan di file"nya master
-  3. klik create pull request
-  4. nanti akan ad pesan menu di pull request -> kemudian klik menuny(pull request)
+  3. Klik create pull request
+  4. Nanti akan ad pesan menu di pull request -> kemudian klik menuny(pull request)
   5. Klik confirm merge (artinya) mengizinkan branch untuk melakukan perubahan di file" master
 
 // Cara menghapus branch
   1. Klik icon branches 
-  2. hapus branch yg ingin di hapus dengan klik icon trash
+  2. Hapus branch yg ingin di hapus dengan klik icon trash
 
 ! Penggabungan branch (merge) bisa bntrok jika file yg d ubah sama dan isinya berbeda (oleh 2 branch), ini bisa diatasi secara manual di githubnya
 
+// DEFINISI FORKING
+  - FORK/FORKING merupakan membuat 'copy/duplikat' dari repo orang lain (beserta historinya(commitnya)) ke github punya kita
+  - Jembatan antara repo original dan duplikatnya
+  - Modifikasi terhadap repo original 
+  - Berkontribusi ke repo orang lain
+  - Fork != Clone
 
+
+// Membuat Release repository di github
+  1. buka reponya di github
+  2. klik menu release yang terletak di kanan view
+  3. isi form yang muncul (tidak wajib smua harus terisi) : 
+    - Bagian tag version berfungsi untuk membuat nama versi. Biasanya nama versi dituliskan dengan huruf v, lalu diikuti dengan nomor versi. Contohnya, seperti v.1.0, v.1.0.0, dan sejenisnya. Jika pembuatan release file digunakan untuk proyek aplikasi, sebaiknya penamaan dari tag version menggunakan semantic versioning.
+    - Bagian release title atau judul dari versi rilis berfungsi sebagai judul rilis yang menjelaskan secara singkat versi rilis yang akan dibuat.
+    - Bagian description atau deskripsi versi rilis berfungsi untuk menuliskan deskripsi detail dari versi rilis yang akan dibuat.
+    - Bagian Attach binaries berfungsi untuk tempat mengunggah file binary, contohnya file-file hasil compile program, compressed file source code, atau file dokumentasi. Biasanya attach binaries digunakan para pengguna Git yang membuat release file untuk proyek aplikasi.
+    - Bagian checkbox pre-release berfungsi untuk menandai bahwa pembuatan rilis ini bersifat pra rilis atau masih dalam bentuk beta. Bagian ini biasa digunakan para pengguna Git yang sedang dalam pengembangan proyek aplikasi di repository GitHub.
+
+  4. Setelah yakin dengan semua yang Anda tulis, silakan klik button Publish release
+
+
+// cara invit kolaborator
+  1. Masuk ke menu setting di repo
+  2. Klik menu manage account
+  3. Klik invite contributor kemudian tuliskan nama akun contributor
+     -> nanti di email akun contributor akan ada pesan invitation
+  4. Jika akun contributor accept invitation maka contributor dapat mengakses reponya
+
+
+// saat ingin merge pull request / confirm pull request gold
+  ! Sebelum menekan "Merge pull request", perhatikanlah dropdown di bagian kanan tombol tersebut. Perlu Anda tahu, sebenarnya ada beberapa macam cara untuk menggabungkan perubahan ke branch/repository utama.
+  Ketiga item tersebut sama-sama berfungsi untuk menggabungkan commit ke dalam branch utama. Namun, terdapat perbedaan hasil dari masing-masing opsi tersebut. Berikut untuk detailnya:
+  - Create a merge commit:  Commit yang dilakukan akan dicatat dan dimasukkan ke dalam history commit branch tujuan. Selain itu, ada satu commit baru yang menginformasikan bahwa telah terjadi proses penggabungan.
+  - Squash and merge: Commit yang dilakukan akan digabungkan dan dicatat menjadi satu commit dalam history commit branch tujuan. (lebih rapih(beberapa commit d branch menjadi satu commit saja saat di merge di branch tujuan))
+  - Rebase and merge: Commit yang dilakukan akan dipindahkan ke dalam history commit commti tujuan. Namun tidak akan membuat commit baru untuk menginformasikan proses pencatatan. (lebih rapih)
+
+
+
+// Cara membuat portfolio dengan github
+  1. Buatlah sebuah repository baru di akun github anda
+  2. Pastikan Anda memberikan nama repository dengan nama akun. Contohnya, di sini kami menggunakan akun Febrianto752, maka nama repository yang kami tulis harus "Febrianto752" juga.
+    ! Selamat! Anda telah menemukan salah satu rahasia dari GitHub, yakni ketika membuat repository dengan nama akun GitHub, berkas readme-nya akan tampil di halaman profil Anda. Pastikan Anda memberi tanda “Public” dan “Add a README file”.
+    -> klik create repository jika sudah yakin dengan isinya
+  3. Selanjutnya, sebuah repository baru akan terbentuk dalam akun Anda, Yang perlu kita lakukan saat ini adalah menambahkan teks pada berkas README sebagai portofolio Anda.
+    -> edit README nya
+
+  4. Isi Readme sesuai dengan portfolio yang akan anda buat
+  5. Untuk memastikan apa yang Anda tulis ke dalam berkas readme sesuai dengan ekspektasi, silakan periksa menggunakan fitur preview. 
+    -> Jika sudah yakin, klik “Commit changes” untuk menyimpan perubahan tersebut.
+    -> Setelah berkas readme diperbarui, kita dapat memeriksa apakah terdapat perbedaan di halaman profil akun GitHub Anda. Sebab, ketika membuat repository dengan nama akun GitHub, secara otomatis berkas readme di dalamnya akan tampil pada halaman profil akun GitHub.
+  6. Bukalah pengaturan profil Anda dengan cara klik profil Anda, kemudian pilih “Your profile”.
+  7. Finish Anda berhasil membuat halaman portofolio pada akun GitHub.
+  -> Anda telah berhasil membuat sebuah portofolio menggunakan GitHub. Dengan begitu, Anda dapat dengan mudah membagikan portofolio ketika ada yang bertanya. Cukup bagikan tautan akun profil Anda seperti ini: https://github.com/Febrianto752
+
+! link referensi contoh portfolio para developer
+  - https://github.com/coderjojo/creative-profile-readme
+  - https://github.com/abhisheknaiidu/awesome-github-profile-readme
+  ! link membuat tampilan statistik di github
+    - https://github.com/anuraghazra/github-readme-stats.
+
+// contoh code membuat tampilan statistik
+  ! tambahkan ini di file readme.md portfolio
+  ! sesuaikan usernamenya dengan username akun anda
+
+  <p align="left">
+  <a href="https://github.com/Febrianto752">
+    <img height="180em" src="https://github-readme-stats-eight-theta.vercel.app/api?username=febrianto752&show_icons=true&theme=algolia&include_all_commits=true&count_private=true"/>
+    <img height="180em" src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=febrianto752&layout=compact&langs_count=8&theme=algolia"/>
+  </a>
+  </p>
+  
+
+
+
+## Bekerja dengan Git 
+
+// Instalasi Git (untuk windows 10)
+  1. Download aplikasi git di wesite official : 
 
 
 

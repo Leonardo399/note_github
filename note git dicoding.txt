@@ -72,7 +72,7 @@
 
 
 === Latihan Kolaborasi dengan Tim ===
-## Rangkuman
+## Rangkuman red
 ! Dengan melakukan PR, kita dapat meninjau terlebih dahulu apakah kode yang akan diimplementasikan sudah sesuai atau belum. Sehingga kita bisa menghindari terjadinya bug atau masalah. Selain itu, Anda juga bisa berdiskusi dengan rekan tim atau orang lain dalam PR tersebut.
 
 ! Terdapat beberapa kolom yang bisa Anda isi pada halaman pull-request dalam GitHub.
@@ -81,6 +81,53 @@
 	- Reviewer : Digunakan untuk meminta lain untuk mereviu perubahan yang telah dilakukan.
 	- Assigness : Digunakan untuk menginformasikan siapa yang memberikan tugas untuk melakukan PR.
 	- Label : Digunakan untuk memberikan kategori pada sebuah PR, contohnya pembetulan suatu masalah (bug), penambahan fitur (enhancement), penambahan dokumentasi (documentation), atau yang lainnya.
+
+
+
+
+=== Github Sebagai Portfolio === silver
+
+## Latihan membuat portfolio dengan github red
+! Ikutilah beberapa tahap berikut untuk mengikuti latihan membuat portofolio menggunakan GitHub : 
+	1. Buatlah sebuah repository baru di akun github anda
+	2. Pastikan Anda memberikan nama repository dengan nama akun. Contohnya, di sini kami menggunakan akun Febrianto752, maka nama repository yang kami tulis harus "Febrianto752" juga.
+		! Selamat! Anda telah menemukan salah satu rahasia dari GitHub, yakni ketika membuat repository dengan nama akun GitHub, berkas readme-nya akan tampil di halaman profil Anda. Pastikan Anda memberi tanda “Public” dan “Add a README file”.
+		-> klik create repository jika sudah yakin dengan isinya
+	3. Selanjutnya, sebuah repository baru akan terbentuk dalam akun Anda, Yang perlu kita lakukan saat ini adalah menambahkan teks pada berkas README sebagai portofolio Anda.
+		-> edit README nya
+
+	4. Isi Readme sesuai dengan portfolio yang akan anda buat
+	5. Untuk memastikan apa yang Anda tulis ke dalam berkas readme sesuai dengan ekspektasi, silakan periksa menggunakan fitur preview.	
+		-> Jika sudah yakin, klik “Commit changes” untuk menyimpan perubahan tersebut.
+		-> Setelah berkas readme diperbarui, kita dapat memeriksa apakah terdapat perbedaan di halaman profil akun GitHub Anda. Sebab, ketika membuat repository dengan nama akun GitHub, secara otomatis berkas readme di dalamnya akan tampil pada halaman profil akun GitHub.
+	6. Bukalah pengaturan profil Anda dengan cara klik profil Anda, kemudian pilih “Your profile”.
+	7. Finish Anda berhasil membuat halaman portofolio pada akun GitHub.
+	-> Anda telah berhasil membuat sebuah portofolio menggunakan GitHub. Dengan begitu, Anda dapat dengan mudah membagikan portofolio ketika ada yang bertanya. Cukup bagikan tautan akun profil Anda seperti ini: https://github.com/Febrianto752
+
+
+
+## Latihan Melihat Portfolio para Developer red
+
+// link referensi contoh portfolio para developer
+	- https://github.com/coderjojo/creative-profile-readme
+	- https://github.com/abhisheknaiidu/awesome-github-profile-readme
+	// link membuat tampilan statistik di github
+		- https://github.com/anuraghazra/github-readme-stats.
+
+
+// contoh membuat tampilan statistik
+	! sesuaikan usernamenya dengan username akun anda
+	<p align="left">
+	<a href="https://github.com/Febrianto752">
+	  <img height="180em" src="https://github-readme-stats-eight-theta.vercel.app/api?username=febrianto752&show_icons=true&theme=algolia&include_all_commits=true&count_private=true"/>
+	  <img height="180em" src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=febrianto752&layout=compact&langs_count=8&theme=algolia"/>
+	</a>
+	</p>
+
+	! tambahkan ini di file readme.md portfolio
+
+
+
 
 
 
