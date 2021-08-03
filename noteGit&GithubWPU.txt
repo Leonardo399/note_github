@@ -158,7 +158,7 @@
 ! jika status "modified" bisa langsung d commit tanpa harus d add 
   // $ git commit -am "Message"
 
-!! jika melakukan merge maka akan langsung berubah (tdk perlu izin seperti jika pke github)
+!! hati - hati jika melakukan merge di git maka akan langsung berubah (tdk perlu izin seperti jika pke github)
 
 
 
@@ -166,8 +166,6 @@
 // merged conflict terjadi jika ada dua perubahan ditempat yang sama
   -> keadaan jika file di master d ubah dan file d branch d ubah yg sama dengan file yg d ubah d master, kemudian d merge d master 
     -> saat merge nanti akan di benarkan secara manual
-
-
 
 // untuk kembali ke commit sebelumnya walaupun sudah d merge 
   - $ git checkout kodehas(7 digit pertama)
@@ -244,7 +242,6 @@
 ! jika ada perubahan baru langsung di repo github maka harus d 'pull' dulu baru bisa 'push'
   - git pull // untuk merge antara commit remote dengan local
   -> git push namaRemote Main|Master
-
 
 
 

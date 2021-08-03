@@ -105,9 +105,9 @@
 // saat ingin merge pull request / confirm pull request gold
   ! Sebelum menekan "Merge pull request", perhatikanlah dropdown di bagian kanan tombol tersebut. Perlu Anda tahu, sebenarnya ada beberapa macam cara untuk menggabungkan perubahan ke branch/repository utama.
   Ketiga item tersebut sama-sama berfungsi untuk menggabungkan commit ke dalam branch utama. Namun, terdapat perbedaan hasil dari masing-masing opsi tersebut. Berikut untuk detailnya:
-  - Create a merge commit:  Commit yang dilakukan akan dicatat dan dimasukkan ke dalam history commit branch tujuan. Selain itu, ada satu commit baru yang menginformasikan bahwa telah terjadi proses penggabungan.
-  - Squash and merge: Commit yang dilakukan akan digabungkan dan dicatat menjadi satu commit dalam history commit branch tujuan. (lebih rapih(beberapa commit d branch menjadi satu commit saja saat di merge di branch tujuan))
-  - Rebase and merge: Commit yang dilakukan akan dipindahkan ke dalam history commit commti tujuan. Namun tidak akan membuat commit baru untuk menginformasikan proses pencatatan. (lebih rapih)
+    - Create a merge commit:  Commit yang dilakukan akan dicatat dan dimasukkan ke dalam history commit branch tujuan. Selain itu, ada satu commit baru yang menginformasikan bahwa telah terjadi proses penggabungan.
+    - Squash and merge: Commit yang dilakukan akan digabungkan dan dicatat menjadi satu commit dalam history commit branch tujuan. (lebih rapih(beberapa commit d branch menjadi satu commit saja saat di merge di branch tujuan))
+    - Rebase and merge: Commit yang dilakukan akan dipindahkan ke dalam history commit commti tujuan. Namun tidak akan membuat commit baru untuk menginformasikan proses pencatatan. (lebih rapih)
 
 
 
@@ -147,20 +147,200 @@
 
 
 
-## Bekerja dengan Git 
+## Bekerja dengan Git red
+! pada direktori yang sudah di inisialisasi git maka akan ada folder yang namanya .git, folder .git itu invisible (bisa d atur ke visible)
 
 // Instalasi Git (untuk windows 10)
-  1. Download aplikasi git di wesite official : 
+  1. Download aplikasi git di wesite official : https://git-scm.com/downloads
+  2. Kemudian install seperti biasa -> nanti akan include git bash untuk terminal 
+  3. Cek apakah sudah terbaca secara global di koputer atau tidak dengan mengetikan perintah di cmd : 'git --version'
+  4. jika belum maka tambahkan path direktori git environment variables (system->advance system setting->environment variables->path->tambahkan path direktori git)
+
+
+// 3 Area pada repo git : 
+  - Working tree/direktori // keadaan modifikasi/perubahan file" pada direktori (modified|dll)
+  - Staging Area // menyimpan informasi tentang apa yang akan menjadi commit Anda selanjutnya.
+  - History // menyimpan informasi commit yang sudah dilakukan
+
+// Inisialisasi git di sebuah direktori 
+  - git init
+
+// Melihat keadaan/status pada aktivitas git
+  - git status
+
+// Menambahkan perubahan yang ada di working tree/direktori ke staging area
+  - git add namaFile // memindahkan satu file dari working direktori ke staging area
+  - git add . // memindahkan semua file dari working direktori ke staging area
+
+// Memindahkan perubahan yang ada di staging area ke history
+  - git commit -m "message"
+    ! sebelum d commit cek terlebih dahulu apakah sudah menambahkan user.nama dan user.email atau belum
+
+! jika status "modified" bisa langsung d commit tanpa harus d add 
+  - git commit -am "Message"
+
+// Inisialisasi tanda pengenal git (seperti akun pada github)
+  ! disarankan sesuaikan username dan email dengan akun github
+  - git config --global user.name "Febrianto752"
+  - git config --global user.email "febrianto.bekasi@gmail.com"      
+
+// Menunjukan informasi mengenai configruasi git
+  - git config --list
+
+// Melihat history git
+  - git log
+  - git log -3 // melihatkan 3 perubahan teratas
+  - git log -- style.css // melihatkan commit yang bersangkutan dengan file style.css
+    ! huruf besar dan kecil berpengarih (case sensitive)
+
+// Menunjukkan list branch yg ada
+  - git branch
+
+// Untuk membuat branch 
+  - git branch namaBranch 
+
+// Untuk menampilkan graph commit 
+  - git log --all --decorate --oneline --graph 
+
+// Untuk membuat alias 
+  - alias graph="git log --all --decorate --oneline --graph" // tidak pke spasi (graph="")
+    ! jadi tinggal panggil aj aliasny : $ graph
+
+// Untuk pindah ke branch 
+  - git checkout namaBranch 
+
+// Untuk pindah ke keadaan commit tertentu
+  - git checkout <sha>
+
+// Untuk Merge branch 
+  ! rule : pindah ke master|main -> $ git merge namaBranch
+
+// Untuk menghapus branch yg sudah d merge
+  - git branch -d namaBranch
+    ! cek terlebih dahulu jika ingin dihapus :
+  // untuk mengecek merge yg terjadi 
+    - git branch --merged
+
+// Untuk menghapus branch tanpa harus d merge dahulu 
+  - $ git branch -D namaBranch
+
+// Jenis merged 
+  1. Fast Forward
+  2. tree ways // merged sambil membuat branch baru
+      -> kondisi dmna ad master yg sudh d merged sm branch1(master, branch1)
+      -> yg kemudian ingin d merge lgi sm branch2(master,branch2)
+      -> maka akan d buat commit baru(master, branch1, branch2)
+
+!! hati - hati jika melakukan merge di git maka akan langsung berubah (tdk perlu izin seperti jika pke github)
+
+// Merge Conflict
+  ! merged conflict terjadi jika ada dua perubahan ditempat yang sama
+    ! Misal keadaan jika file di master diubah dan file di branch d ubah pada baris yang sama dengan file yg d ubah d master, kemudian d merge d master 
+      -> saat merge nanti akan di benarkan secara manual
+
+>>> gold
+// Membatalkan penambahan file 
+  ! file-file yang baru dibuat dengan melakukan perintah git berikut maka file-file tersebut akan terhapus 
+    - git clean -f
+
+// Membatalkan perubahan file dan membatalkan penghapusan file
+  ! file-file yang sudah dimodifikasi (jika di git status dalam mode: modified) maka akan kembali ke keadaan sebelum dimodifikasi
+    - Git restore namaFile(contoh : index.html)
+
+// Membatalkan dari staging area (dari staging area ke working directory)
+  - Git restore --staged namaFile(contoh : index.html) // maka file akan berada di working area/direktori(dalam keadaan modified|delete|add|renamed)
+    // lakukan git restore jika ingin ke keadaan sebelum modified
+      -> git restore namaFile(contoh : index.html) 
+
+// Membatalkan yang sudah dicommit 
+  ! sayangnya tidak bisa, tetapi ada perintah git revert dan git reset untuk menghapus atau kembali ke commit sebelumnya
+
+// Membandingan 2 commit 
+  - git diff <shacommit1> <shacommit2>
+  // contoh : 
+    - git diff 6d9bf58 HEAD
+    - git diff 6d9bf58 2dfbf58
+
+// untuk kembali ke commit sebelumnya dan menghapus git sesudahnya (git reset)
+  ! Hati-hati! Perintah ini membuat kita tidak bisa kembali lagi ke masa depan. Mau tidak mau, kita harus menulis ulang sejarah.
+  ! sebelum melakukan git reset disarankan untuk mengingat atau menyalin sha dari smua commit
+    -> yang nanti bisa digunakan jika tidak yakin untuk mereset tetapi sudah terlanjur melakukan git reset (! ini bisa dilakukan jika belum melakukan commit baru)
+  ! Perintah git reset ini memiliki tiga argumen atau opsi utama, yaitu --soft, --mixed, dan --hard : 
+  --soft akan mengebalikan dengan kondisi file dalam keadaan staged
+  --mixed akan mengebalikan dengan kondisi file dalam keadaan modified
+  --hard akan mengebalikan dengan kondisi file dalam keadaan commited (perubahan hilang smua)
+
+  // Contoh : 
+    // riwayat commit
+    b432sdd merubah file style.css
+    123asds menambah file index.html
+    426asgs menambah file index.html
+
+    // perintah git
+      - git reset --soft 426asgs
+       -> !jika tidak jadi bisa kembali keawal dengan sha commit yg dituju (! ini bisa dilakukan jika belum melakukan commit baru)
+        - git reset --soft b432sdd
+
+
+// merubah/rename commit sebelumnya (git commit --amend)
+  // contoh kasus : jika sudah melakukan commit dan berpikir bahwa lebih baik aktivitas yang telah dikerjakan sekarang ini digabungkan menjadi 1 commit dengan sebelumnya
+    -> maka tinggal jalankan perintah git : 
+      - git add . (! jika belum masuk staging area)
+      -> git commit --amend -m "New commit message."
+        -> nanti 1 commit sebelumnya akan berubah (sha berubah,dan isi commit berubah)
+
+
+// Digunakan jika ingin tahu siapa saja yg merubah/membuat(kontributor) suatu file (Git Blame)
+  - git blame namaFile(contoh: index.html)
+    -> nanti akan muncul daftar <sha>(nama_kontributor tanggal_perubahan)
+    -> kemudian lakukan perintah git berikut untuk mengetahui detailnya
+      - git show <sha>
+
+
+// Membuat Alias di git red
+  // membuat alias di config global supaya tidak terus menerus menulisnya 
+    // perintah git : 
+      - git config --global alias.namaAlias "perintah"
+      // contoh : 
+        - git config --global alias.ko commit
+        - git config --global alias.graph "log --all --oneline --decorate --graph"
+
+    // cara untuk memanggil alias
+      - git namaAlias
+      // contoh : 
+        - git graph
+
+// Merubah history digithub jika meremote (saat melakukan perintah git yang merubah history commit di local computer)
+  - git push --force <remoteName> <branchName>
+
+
+^ materi git remote, git multiple remote, branch remote,  github pages, git ignore, dan git rebase bisa dilihat di noteGit&GithubWPU.txt
+
+<<<
 
 
 
 
+!! NOTE !! gold
+! git branch digunakan saat ingin menambahkan fitur baru yg experimental atau saat bekerja tim 
+! cara keluar dari git log : klik aj 'q'
+! cara membuat folder di github atau memindahkan file di github
+  - link : https://fauzanashariblog.blogspot.com/2019/07/membuat-folder-di-repository-github-dan.html
+  ! klik create new file -> tuliskan nama_folder/nama_file
 
+! menghapus git remote : git remote rm namaRemote
 
+!! untuk melakukan remote dengan github maka history antar local dan repo github harus sama(related)
 
+! Menangani  ! [remote rejected] master -> master (permission denied)
+  1. git config --global --edit
+  2. Add these lines of configuration at the end of file: 
+    [credential]
+      helper = osxkeychain
+      useHttpPath = true
 
+! cara mengembalikan branch yang sudah terhapus : 
+  - git checkout -b <branch> <sha>
 
-
-
-
+! Insights Graph repository hanya tersedia di repository publik dengan GitHub Free dan GitHub Free untuk organisasi. Sedangkan untuk repository private dapat digunakan melalui GitHub Pro, GitHub Team, GitHub Enterprise Cloud, dan GitHub Enterprise Server. Untuk informasi lebih lanjut, lihat " Tentang grafik repositori " dan " Produk GitHub ."
 

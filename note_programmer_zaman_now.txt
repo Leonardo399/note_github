@@ -2,17 +2,13 @@
 // file-file yang baru dibuat dengan melakukan perintah git berikut maka file-file tersebut akan terhapus 
 	- git clean -f
 
-
-
 ## Membatalkan perubahan file (1:20:00) red
 // file-file yang sudah dimodifikasi (jika di git status dalam mode: modified) maka akan kembali ke keadaan sebelum dimodifikasi
 	- Git restore namaFile(contoh : index.html)
 
-
 ## Membatalkan penghapusan file (1:22:00) red
 // Perintah git : 
 	- Git restore namaFile(contoh : index.html)
-
 
 ## Membatalkan dari staging area (dari staging area ke working directory) (1:23:32) red
 // Perintah git : 
@@ -20,11 +16,8 @@
 		// lakukan git restore jika ingin ke keadaan sebelum modified
 			-> git restore namaFile(contoh : index.html) 
 
-
 ## Membatalkan yang sudah dicommit red
 ! tidak bisa, tetapi ada perintah git revert dan git reset untuk menghapus atau kembali ke commit sebelumnya
-
-
 
 ## Membandingan 2 commit red
 // sintaks : git diff <shacommit1> <shacommit2>
@@ -69,7 +62,6 @@
 		-> nanti akan muncul daftar <sha>(nama_kontributor tanggal_perubahan)
 		-> kemudian lakukan perintah git berikut untuk mengetahui detailnya
 			- git show <sha>
-
 
 
 ## Membuat Alias di git red
