@@ -104,6 +104,44 @@
 	- git checkout namaFile(contoh : index.html)
 
 
+## Membuat dan Menghubungkan SSH KEY red
+! link reference : https://medium.com/@sarascahya/cara-setup-ssh-pada-akun-github-d59ff480616
+! SSH (Secure SHell) adalah protokol transfer yang memungkinkan penggunanya untuk mengontrol sebuah perangkat secara remote atau dari jarak jauh melalui koneksi internet.
+! Fungsi SSH adalah sebagai media transfer data aman dan terpercaya yang bisa digunakan secara remote atau dari jarak jauh
+! SSH digunakan untuk mengamankan data transfer dan membuat kita tidak usah memasukan username dan password saat melakukan cloning, pull, ataupun push ke github 
+
+// Langkah-langkahnya untuk Generate SSH key di komputer adalah sebagai berikut:
+	1. Buka Git Bash (anda bisa mengaksesnya melalui start menu)(name_user@DESKTOP-HQ68B13 MINGW64 ~)
+	2. Atur konfigurasi user.name dan user.email yang akan anda gunakan 
+	3. Selanjutnya mengecek apakah di device yang anda gunakan sudah ada SSh key atau belum dengan cara ketikan : 'ls -al ~/.ssh' 
+		-> jika ada pesan cannot access '....', maka belum ada SSH key yang digenerate di komputer anda
+	4. Selanjutnya anda dapat mulai melakukan proses Generate SSh key dengan mengetikan : ssh-keygen -t rsa -b 4096 -C "email@gmail.com"
+		-> enter -> enter -> enter
+		! nanti akan terbuat file id_rsa dan id_rsa.pub
+			! file id_rsa.pub yg berisikan enkripsi password ssh key 
+	5.  Jalankan ssh-agent anda terlebih dahulu dengan cara ketikan : 'eval $(ssh-agent -s)'
+	6. menambahkan SSH key ke ssh-agent dengan ketikan : 'ssh-add ~/.ssh/id_rsa'
+		-> nanti akan ada pesan : 'identity added: /c/Users/febrianto/.ssh/id_rsa'
+	7. Setelah setting dibagian git selesai, sekarang saatnya anda memulai untuk setting SSH di akun github anda. Anda dapat meng-copy SSH key dengan cara membuka file id_rsa.pub dengan text-editor kemua copy smua isinya, atau dapat anda lakukan dengan ketikan : 'clip < ~/.ssh/id_rsa.pub'
+	8. Buka akun github anda dan masuk ke menu Setting
+		-> pilih menu SSH and GPG keys
+		-> isi kolom title (contoh : HOME desktop) dan paste key ke kolom key
+		-> kemudian klik tombol 'add ssh key'
+	9. Finish, sekarang anda bisa mengcloning repo di github dengan menggunakan SSH
+
+
+! SSH-Agent
+	- Merupakan program pembantu yang dipakai untuk menjaga identity-key dan passphrases. Jadi, bisa diartikan sebuah proses yang menangani identity-key ssh serta passphrases (password) ssh keys.
+	- Sehingga administrator tidak perlu lagi melakukan entry passphrase lagi saat authentication ke ssh server. Biasanya digunakan jika kita menggunakan metode key-pair untuk melakukan remote ssh server.
+
+! SSH-Add
+	- SSH-Add adalah perintah yang digunakan untuk menambahkan private key (id_rsa) kedalam sebuah ssh-agent.
+
+! Passphrase adalah kata sandi yang berfungsi sebagai pengaman file Sertifikat Digital (dapat dibuat dengan karakter apa saja, bebas).
+
+
+!! satu ssh-key di komputer hanya bisa dihubungkan dengan 1 akun github saja
+	! tetapi satu akun github bisa memiliki banyak ssh-key
 
 
 
