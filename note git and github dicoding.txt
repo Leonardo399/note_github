@@ -1,9 +1,36 @@
-=== Dasar Git === silver
+# Git dan Github red
+! Terdapat menu utama pada saat mengakses halaman GitHub yaitu, Explore Repository, Sign up, dan Sign in. Selain itu, ada juga fitur-fitur pendukung pada GitHub seperti:
+	- New Repository, digunakan membuat repository baru dengan jenis public & private.
+	- Import Repository, digunakan untuk mengambil/menyalin file proyek dari vendor lain seperti Subversion atau Mercurial ke dalam repository baru pada GitHub. Proses impor dilakukan dengan menggunakan link URL.
+	- Gist, digunakan untuk berbagi potongan kode, catatan, melakukan daftar, dan lainnya. Seperti halnya repositori, Anda dapat menyetel dan menyimpan Intisari Anda sebagai rahasia atau publik.
+	- GitHub Organization, digunakan untuk berkolaborasi bersama pada suatu organisasi misalnya untuk bisnis dengan sejumlah kelebihan misalnya banyak proyek sekaligus. Pemilik dan administrator dapat mengelola hak akses anggota ke suatu data atau proyek dengan fitur keamanan dan administratif yang canggih.
+	- GitHub Project, digunakan untuk mengatur dan memprioritaskan pekerjaan. Anda dapat membuat papan proyek (project board) untuk mengerjakan fitur tertentu, peta alur yang komprehensif (comprehensive roadmaps), atau bahkan merilis daftar periksa (release checklists). Dengan papan proyek, Anda memiliki fleksibilitas untuk membuat alur kerja khusus yang sesuai dengan kebutuhan Anda.
+
+! Dalam toolbar terdapat beberapa menu seperti:
+	- Pull request untuk melihat semua aktivitas mengenai pekerjaan yang telah selesai dan tersimpan di dalam GitHub. 
+	- Issues untuk melihat semua tanggapan atau komentar mengenai permasalahan yang kita dapat saat menggunakan repository milik orang lain. 
+	- Marketplace untuk mencari dan memasang fitur tools pendukung yang disediakan oleh GitHub. Tools dalam marketplace akan membantu Anda dalam mengoptimalkan penggunaan GitHub di dalam proyek. 
+	- Explore untuk melihat berbagai informasi atau berita terkini mengenai repository, topik, dan trending di GitHub. 
+	- Settings untuk melakukan perubahan profil seperti username, foto, serta informasi lainnya.
+
+! Setiap proyek repository memiliki kolaborator dan kontributor. Seorang kolaborator merupakan anggota tim yang memiliki akses dalam sebuah repositori proyek (project repository). Akses ini tentunya bermacam-macam ya, ada yang dibatasi pada pekerjaan-pekerjaan tertentu, ada pula yang dapat melakukan semua pekerjaan dalam sebuah repository.
+
+! Seorang kolaborator juga dapat berperan sebagai kontributor. Apa itu kontributor? Kontributor adalah siapa saja yang dapat melakukan commit atau menyimpan cuplikan perubahan ke dalam repository (git push). Akan tetapi, tidak semua kontributor dapat melakukan commit secara langsung. Ini disebabkan karena mereka tidak memiliki akses untuk melakukan push ke dalam repository tersebut (atau tidak berperan sebagai kolaborator). Sehingga mereka perlu melakukan pull request untuk melakukan commit pada repository orang lain.
+
+! jika Anda menggunakan akun organisasi, GitHub menyediakan 5 tingkatan level (role) yang berbeda untuk seorang kolaborator, yakni read, triage, write, maintain, dan admin : 
+	- Seorang kolaborator dengan tingkatan read, biasanya hanya memiliki akses untuk membuka repository. Level ini direkomendasikan untuk orang non-coding (tim lain) yang ingin melihat atau berdiskusi mengenai proyek repository.
+	- Seorang kolaborator dengan tingkatan write, biasanya digunakan oleh seorang developer atau pengembang untuk membuka, melakukan clone, dan melakukan push pada repository tersebut. Ia juga dapat mengelola issues dan pull request yang masuk.
+	- Seorang kolabolator dengan tingkatan triage, biasanya digunakan oleh maintainer yang hanya dapat mengeloa issues dan pull request yang ada masuk ke dalam repository.
+	- Seorang kolaborator dengan tingkatan maintain, biasanya digunakan oleh seorang project manager yang dapat mengelola beberapa pengaturan dalam repository. Ia juga dapat melakukan berbagai hal seseorang dengan tingkatan read.
+	- Seorang kolaborator dengan tingkatan admin, biasanya digunakan oleh seseorang yang butuh mengakses secara penuh kepada repository. Ia dapat melakukan berbagai hal, termasuk mengundang kolaborator lain untuk bergabung dalam repository.
+
+
+# Dasar Git red 
 ! File README.md berisi mengenai isi dari repository
 ! Untuk format penulisan README.md yang lebih lengkap, Anda dapat mempelajarinya di https://www.markdownguide.org/basic-syntax/
 
 
-## Cara membuat release di github red
+## Cara membuat release di github 
 // berikut langkah-langkahnya : 
 	1. buka reponya di github
 	2. klik menu release yang terletak di kanan view
@@ -16,13 +43,33 @@
 
 	4. Setelah yakin dengan semua yang Anda tulis, silakan klik button Publish release
 
+## Rangkuman Dasar Git
+! Ketika membuat repositoryada beberapa inisialisasi yang bisa kita lakukan, yaitu:
+	- Add a README file atau penambahan README File pada repository baru. Ketika repository telah dibuat, GitHub secara otomatis membuatkan file Readme ke dalam repository. 
+	- Add .gitignore atau penambahan berkas .gitignore pada repository. Ketika repository telah terbuat, file .gitignore akan tercipta sesuai dengan pilihan template.gitignore yang dipilih.
+	- Choose a license atau penambahan berkas license pada repository. Ketika membuat repository, Anda bisa memilih lisensi untuk repository tersebut sehingga proyek yang ada di dalamnya dapat digunakan secara bebas oleh orang lain.
 
 
-=== Kolaborasi dengan Tim === silver
+
+# Git Branches red
+
+## Rankuman
+! Berikut adalah alasan dari penggunaan Git Branch:
+	- Tanpa git branch pekerjaan akan menjadi rumit. Ketika fitur yang telah selesai masih menjadi satu dengan fitur lain dan kemudian dijalankan, maka akan terdapat banyak bug atau kesalahan karena ada pekerjaan yang tumpang tindih.
+	- Penambahan branch baru dapat meminimalisir kesalahan pada aplikasi utama.
+	- Git branch juga berfungsi untuk mempermudah dalam berkolaborasi dalam tim. Selain itu, membuat pekerjaan menjadi lebih teratur karena setiap pekerjaan tidak saling tumpang tindih.
+
+! Ketika pembuatan branch baru, kita memerlukan source (sumber) untuk pengembangan aplikasi, sehingga kita perlu mengambil sumbernya berdasarkan branch utama yang biasa disebut main/master
+
+
+
+
+
+# Kolaborasi dengan Tim red
 ! seorang kolaborator belum tentu seorang kontributor karena seorang kolaborator belum tentu pernahmelakukan commit atau merubah repo di github, tetapi seorang kontributor sudah tentu pernah melakukan commit atau merubah. 
 ! Seorang kontributor bisa merupakan dari orang luar proyek atau organisasi.
 
-## Latihan Berkolaborasi dengan Tim red
+## Latihan Berkolaborasi dengan Tim
 // cara invit kolaborator
 	1. masuk ke menu setting di repo
 	2. klik menu manage account
@@ -38,7 +85,7 @@
 	- Rebase and merge: Commit yang dilakukan akan dipindahkan ke dalam history commit commti tujuan. Namun tidak akan membuat commit baru untuk menginformasikan proses pencatatan. (lebih rapih)
 
 
-## Apa itu Fork red
+## Apa itu Fork 
 ! Fork adalah proses menyalin proyek repository orang lain ke repository pribadi. Fork bertindak sebagai jembatan antara repositori asli (original repository) dan repositori salinan (fork repository). Anda dapat menawarkan untuk menggabungkan perubahan yang telah Anda lakukan pada repositori salinan ke repositori asal untuk membantu membuat proyek orang lain lebih baik dengan melakukan pull request.
 
 ! Pada praktiknya, ketika Anda tidak memiliki akses pada sebuah public repository, Anda dapat melakukan beberapa tahap berikut agar dapat berkontribusi pada repository tersebut:
@@ -47,7 +94,7 @@
 	- Melakukan pull request agar perubahan dapat disetujui untuk digabungkan ke dalam repository asli.
 
 
-## Code reviews red
+## Code reviews 
 ! Code reviews bertujuan untuk  mengomentari perubahan, menyetujui perubahan, atau meminta perubahan lebih lanjut sebelum pull request digabungkan.
 ! Berikut beberapa aspek yang dapat digunakan sebagai acuan dalam melakukan ulasan kode/code reviews:
 	- Kode dirancang dengan baik.
@@ -71,8 +118,8 @@
 
 
 
-=== Latihan Kolaborasi dengan Tim ===
-## Rangkuman red
+# Studi Kasus Kolaborasi dengan Tim red
+## Rangkuman 
 ! Dengan melakukan PR, kita dapat meninjau terlebih dahulu apakah kode yang akan diimplementasikan sudah sesuai atau belum. Sehingga kita bisa menghindari terjadinya bug atau masalah. Selain itu, Anda juga bisa berdiskusi dengan rekan tim atau orang lain dalam PR tersebut.
 
 ! Terdapat beberapa kolom yang bisa Anda isi pada halaman pull-request dalam GitHub.
@@ -85,9 +132,9 @@
 
 
 
-=== Github Sebagai Portfolio === silver
+# Github Sebagai Portfolio red
 
-## Latihan membuat portfolio dengan github red
+## Latihan membuat portfolio dengan github 
 ! Ikutilah beberapa tahap berikut untuk mengikuti latihan membuat portofolio menggunakan GitHub : 
 	1. Buatlah sebuah repository baru di akun github anda
 	2. Pastikan Anda memberikan nama repository dengan nama akun. Contohnya, di sini kami menggunakan akun Febrianto752, maka nama repository yang kami tulis harus "Febrianto752" juga.
@@ -106,7 +153,7 @@
 
 
 
-## Latihan Melihat Portfolio para Developer red
+## Latihan Melihat Portfolio para Developer 
 
 // link referensi contoh portfolio para developer
 	- https://github.com/coderjojo/creative-profile-readme
@@ -128,15 +175,15 @@
 
 
 
+## Rangkuman
+! CV berbeda dengan Portofolio.
+
+! CV atau curriculum vitae merupakan gambaran tertulis tentang pengalaman seseorang beserta kualifikasi lain untuk mendapatkan kesempatan kerja, sedangkan portofolio biasanya digunakan untuk membuktikan apa yang telah ditulis dalam CV.
 
 
-
-
-
-
-!! NOTE !!
+!! NOTE !! red
 ! Insights Graph repository hanya tersedia di repository publik dengan GitHub Free dan GitHub Free untuk organisasi. Sedangkan untuk repository private dapat digunakan melalui GitHub Pro, GitHub Team, GitHub Enterprise Cloud, dan GitHub Enterprise Server. Untuk informasi lebih lanjut, lihat " Tentang grafik repositori " dan " Produk GitHub ."
-
+! Bisa melihat rangkumannya di module Penutup -> Rankuman Kelas
 
 
 $ pada tanggal 02/08/2021 website Dicoding sedang dilakukan maintenance
